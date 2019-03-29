@@ -25,7 +25,7 @@ public class PracownikController {
     }
 
     @PutMapping("/pracownik/{id}")
-    Pracownik editTowar(@RequestBody Pracownik nowyPracownik, @PathVariable Long id) {
+    Pracownik editPracownik(@RequestBody Pracownik nowyPracownik, @PathVariable Long id) {
 
         return repository.findById(id)
                 .map(pracownik -> {
@@ -44,7 +44,7 @@ public class PracownikController {
     }
 
     @DeleteMapping("/pracownik/{id}")
-    void deleteTowar(@PathVariable Long id) {
+    void deletePracownik(@PathVariable Long id) {
         repository.deleteById(id);
     }
 }

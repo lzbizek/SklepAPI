@@ -29,4 +29,11 @@ public class LoadDatabase {
             log.info("Preloading " + repository.save(new Pracownik(99001122345L, "Dawid","Nowak", 1, 2400f)));
         };
     }
+
+    @Bean
+    CommandLineRunner initKupony(KuponRepository repository) {
+        return args -> {
+            log.info("Preloading " + repository.save(new Kupon(5009L, 3, 3.99f)));
+        };
+    }
 }
